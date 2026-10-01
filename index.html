@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="InVoidStar Tool Hub — 小工具、研究站点与数据项目的统一入口。" />
+    <meta name="theme-color" content="#f7f8fb" />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="InVoidStar · Tool Hub" />
+    <meta property="og:description" content="A curated home for useful tools, research utilities, and project sites." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>InVoidStar · Tool Hub</title>
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("tool-hub-theme");
+          const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.dataset.theme = stored ?? preferred;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
